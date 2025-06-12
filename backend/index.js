@@ -5,23 +5,16 @@ dotenv.config();
 import authRoutes from "./routes/auth.routes.js";
 
 import cookieParser from "cookie-parser";
-// import cors from "cors";
 
 const app = express();
 
 const port = process.env.PORT || 5000;
 app.use(express.json());
-app.use(cookieParser()); 
-// app.use(cors(
-//     {
-//         credentials: true,
-//         origin: "http://localhost:5000"
-//     }
-// ));
+app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 
 app.listen(port, () => {
-    console.log("Server is running on port " + port);
-    connectDB();
-}); 
+  console.log("Server is running on port " + port);
+  connectDB();
+});
