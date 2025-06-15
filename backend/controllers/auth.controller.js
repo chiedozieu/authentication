@@ -70,9 +70,7 @@ export const verifyEmail = async (req, res) => {
       verificationToken: code,
       verificationTokenExpiresAt: { $gt: Date.now() },
     });
-    console.log("Now:", Date.now());
-    console.log("Expires At:", user.verificationTokenExpiresAt);
-
+   
     if (!user) {
       return res.status(400).json({
         success: false,
