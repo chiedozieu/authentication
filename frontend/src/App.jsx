@@ -118,6 +118,8 @@ function App() {
             </RedirectAuthUser>
           }
         />
+        {/* 404 route */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Toaster />
     </div>
